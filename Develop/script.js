@@ -1,13 +1,13 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-$(function module() {
+$(document).ready(function() {
   let plan = $(".description");
   let planText = $(plan).val();
 
   $('.saveBtn').on('click', function () {
-    console.log(this);
-    console.log(planText);
+    console.log($(this).siblings(".description").val());
+    console.log($(this).parent().attr("id"));
   });
 
   function updateClock() {
