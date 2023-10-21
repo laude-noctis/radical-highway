@@ -2,12 +2,13 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function module() {
-  let plan = document.getElementsByClassName("description")[0].value;
-  let submitBtn = document.querySelector(".saveBtn");
-  submitBtn.addEventListener("click", function () {
-  
-  });
+  let plan = $(".description");
+  let planText = $(plan).val();
 
+  $('.saveBtn').on('click', function () {
+    console.log(this);
+    console.log(planText);
+  });
 
   function updateClock() {
     const today = dayjs().format("ddd MMM D, YYYY, hh:mm:ss");
