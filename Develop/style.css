@@ -12,6 +12,11 @@ textarea {
   padding: 10px;
 }
 
+.header {
+  display: flex;
+  justify-content: center;
+}
+
 .description {
   white-space: pre-wrap;
 }
@@ -36,7 +41,7 @@ textarea {
 }
 
 .present {
-  background-color: #ff6961;
+  background-color: #ff6161;
   color: white;
 }
 
