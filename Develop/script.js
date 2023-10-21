@@ -1,32 +1,36 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-$(document).ready(function() {
-  
+$(document).ready(function () {
+
   $('.saveBtn').on('click', function () {
     console.log($(this).parent().attr("id"));
     console.log($(this).siblings(".description").val());
     localStorage.setItem($(this).parent().attr("id"), $(this).siblings(".description").val());
   });
-  
-  function timeColoring() {
-    let hourTime = $("textarea").parent().attr("id");
-    currentTime = dayjs();
-    for (let i = 0; i < hourTime; ++i) {
-      if (hourTime < currentTime) {
-        element.addClass("past");
-      } else if (hourTime = currentTime) {
-        element.addClass("present");
+
+  function colorTime() {
+    let currentTime = dayjs().format("HH");
+    let colorElement = $(".time-block")
+    console.log(currentTime);
+
+    for (let i = 0; i < currentTime; ++i) {
+      if (??? < currentTime) {
+        colorElement.addClass("past");
+      } else if (??? = currentTime) {
+        colorElement.addClass("present");
       } else {
-        element.addClass("future");
+        colorElement.addClass("future");
       }
     }
-  }
-  timeColoring();
+  };
+
+  colorTime();
 
   function updateClock() {
-    const today = dayjs().format("ddd MMM D, YYYY, hh:mm:ss");
+    let today = dayjs().format("ddd MMM D, YYYY, hh:mm:ss");
     $("#currentDay").text(today);
+
   }
   setInterval(updateClock, 1000)
 });
