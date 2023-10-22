@@ -39,7 +39,7 @@ $(document).ready(function () {
 
       if(timeBlockHour < currentTime) {
         $(this).addClass("past")
-      } else if (timeBlockHour !== currentTime) {
+      } else if (timeBlockHour === currentTime) {
         $(this).addClass("present")
       } else {
         $(this).addClass("future")
