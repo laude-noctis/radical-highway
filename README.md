@@ -9,3 +9,6 @@ It color codes the day parts (each hour) by past, present, and future to help ke
 ## Credits
 HTML and CSS code source: https://github.com/coding-boot-camp/crispy-octo-meme
 
+## Links
+Webpage: https://laude-noctis.github.io/radical-highway/
+![Photo of Schedule](./Screenshot.png)
