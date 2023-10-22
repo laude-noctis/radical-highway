@@ -8,33 +8,25 @@ $(document).ready(function () {
     console.log($(this).siblings(".description").val());
     localStorage.setItem($(this).parent().attr("id"), $(this).siblings(".description").val());
   });
-
+  
   function colorTime() {
-    let currentTime = dayjs().format("HH");
-    let colorElement = $(".time-block")
+    let currentTime = dayjs().hour();
     console.log(currentTime);
+    
+    $('.time-block').each(function () {
+      let timeBlockHour = parseInt($(this).attr('id').split('-')[1]);
 
-    for (let i = 0; i < currentTime; ++i) {
-      if (??? < currentTime) {
-        colorElement.addClass("past");
-      } else if (??? = currentTime) {
-        colorElement.addClass("present");
-      } else {
-        colorElement.addClass("future");
+      if(timeBlockHour < currentTime) {
+        $(this).addClass("past")
+      } else if (timeBlockHour !== currentTime) {
+        $(this).addClass("present")
+      } else (timeBlockHour > currentTime); {
+        $(this).addClass("future")
       }
-    }
+    })
   };
-
   colorTime();
-
-  function updateClock() {
-    let today = dayjs().format("ddd MMM D, YYYY, hh:mm:ss");
-    $("#currentDay").text(today);
-
-  }
-  setInterval(updateClock, 1000)
 });
-
 // TODO: Add code to apply the past, present, or future class to each time
 // block by comparing the id to the current hour. HINTS: How can the id
 // attribute of each time-block be used to conditionally add or remove the
@@ -47,10 +39,7 @@ $(document).ready(function () {
 // attribute of each time-block be used to do this?
 //
 
-
-
-
-
+// completed
 // TODO: Add a listener for click events on the save button. This code should
 // use the id in the containing time-block as a key to save the user input in
 // local storage. HINT: What does `this` reference in the click listener
